@@ -11,7 +11,7 @@ import {
 // === IMPORT NEW COMPONENTS AND DATA ===
 import DiagnosisDashboard from './components/DiagnosisDashboard'; 
 import ArticleCard from './components/ArticleCard'; 
-import { ARTICLES, CONTACT_INFO } from './constants/ArticleData'; 
+import { ARTICLES, CONTACT_INFO } from './constants/ArticleData.js'; 
 
 // === IMPORT STATIC ASSETS: UNCHANGED AS REQUESTED ===
 import pageBgImage from './assets/747af4250dd56f8047edc8a9c72a0131.gif';
