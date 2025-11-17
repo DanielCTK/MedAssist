@@ -1,0 +1,52 @@
+# === HỆ THỐNG / OS / IDE ===
+# Bỏ qua các file rác của hệ điều hành và IDE
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# === FILE SCRIPT TẠM ===
+# Bỏ qua các file scan tự tạo mà bạn đã dùng
+cau_truc_du_an.doc
+cau_truc_du_an.txt
+scan_to_file.py
+scan_clean.py
+
+# === FRONTEND (medassist-frontend) ===
+# Bỏ qua thư mục thư viện (rất nặng)
+medassist-frontend/node_modules/
+# Bỏ qua thư mục build (file kết quả)
+medassist-frontend/dist/
+medassist-frontend/.vite/
+# Bỏ qua file môi trường (chứa API keys)
+medassist-frontend/.env
+medassist-frontend/.env.*
+!medassist-frontend/.env.example
+
+# === BACKEND (MedAssistBackEnd) ===
+# Bỏ qua thư mục thư viện
+MedAssistBackEnd/node_modules/
+# Bỏ qua các file môi trường (chứa password CSDL, secret key)
+MedAssistBackEnd/.env
+MedAssistBackEnd/.env.*
+!MedAssistBackEnd/.env.example
+# Bỏ qua thư mục chứa ảnh user upload (tránh đưa data cá nhân lên Git)
+MedAssistBackEnd/uploads/
+# Bỏ qua file database SQLite (nếu bạn dùng local)
+MedAssistBackEnd/prisma/*.db
+MedAssistBackEnd/prisma/*.sqlite
+
+# === AI CORE (medassist-ai-core) ===
+# Bỏ qua môi trường ảo Python
+medassist-ai-core/venv/
+medassist-ai-core/env/
+medassist-ai-core/.venv/
+# Bỏ qua cache của Python
+medassist-ai-core/__pycache__/
+medassist-ai-core/*.pyc
+# Bỏ qua các file model AI (!!!)
+# File .keras/.h5/.pt thường RẤT NẶNG, GitHub sẽ chặn nếu > 100MB
+medassist-ai-core/models/*.keras
+medassist-ai-core/models/*.h5
+medassist-ai-core/models/*.pt

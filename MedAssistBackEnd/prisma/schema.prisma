@@ -1,0 +1,62 @@
+// Cấu hình Database
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Cấu hình Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ==========================================================
+// ĐỊNH NGHĨA CÁC MODEL (BẢNG)
+// ==========================================================
+
+// 1. Bảng Người dùng (User)
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String   
+  name      String?
+  createdAt DateTime @default(now())
+  
+  // Chức năng quên mật khẩu
+  passwordResetToken   String?   @unique
+  passwordResetExpires DateTime? 
+
+  // Liên kết
+  records   DiagnosisRecord[]
+}
+
+// 2. Bảng Bản ghi Chẩn đoán (DiagnosisRecord) - ĐÃ CẬP NHẬT
+model DiagnosisRecord {
+  id             String   @id @default(uuid())
+  
+  // Dữ liệu ảnh
+  imagePath      String   
+  
+  // --- KẾT QUẢ AI (Cập nhật để khớp với Controller) ---
+  
+  // Mã bệnh (0, 1, 2, 3, 4). Bắt buộc phải có.
+  diagnosisCode  Int      
+  
+  // Nhãn bệnh (VD: "Không bệnh"). Để Optional (?) phòng khi lỗi
+  diagnosisLabel String?  
+  
+  // Độ tin cậy (VD: "99.5%"). Lưu dưới dạng String
+  confidence     String?  
+  
+  // [QUAN TRỌNG] Lưu toàn bộ JSON kết quả chi tiết (lời khuyên, raw_data...)
+  // Sử dụng @db.Text để lưu chuỗi dài thoải mái
+  fullResult     String?  @db.Text 
+
+  // Liên kết với người dùng
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+  
+  // Thời gian
+  createdAt      DateTime @default(now())
+
+  @@index([userId])
+}
