@@ -1,0 +1,62 @@
+PROJECT STRUCTURE: MedAssist
+==============================
+MedAssist/
+│   ├── cau_truc_du_an.doc
+│   ├── Docs/
+│   ├── medassist-ai-core/
+│   │   ├── main.py
+│   │   ├── requirements.txt
+│   │   ├── models/
+│   │   │   ├── best_model_efficientnetb3_dr.keras
+│   ├── medassist-frontend/
+│   │   ├── eslint.config.js
+│   │   ├── index.html
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── postcss.config.js
+│   │   ├── README.md
+│   │   ├── tailwind.config.js
+│   │   ├── vite.config.js
+│   │   ├── public/
+│   │   │   ├── vite.svg
+│   │   ├── src/
+│   │   │   ├── App.css
+│   │   │   ├── App.jsx
+│   │   │   ├── index.css
+│   │   │   ├── main.jsx
+│   │   │   ├── assets/
+│   │   │   │   ├── 064417ff3af428b73bed707b55957651.gif
+│   │   │   │   ├── 361d5cb71a00267045aa9d5acb747f44.gif
+│   │   │   │   ├── 3fb46a62467bd228cefc63500f7a6ee4.gif
+│   │   │   │   ├── 71e4482d08fecd57c2635d210a8b076c.gif
+│   │   │   │   ├── 747af4250dd56f8047edc8a9c72a0131.gif
+│   │   │   │   ├── 962ebfa1d3757c9cbcfe03fac888e12a.gif
+│   │   │   │   ├── fc8ad4049ad6e6a4a58a1448dde9873b.gif
+│   │   │   │   ├── react.svg
+│   │   │   ├── components/
+│   │   │   │   ├── ArticleCard.jsx
+│   │   │   │   ├── DiagnosisDashboard.jsx
+│   │   │   ├── constants/
+│   │   │   │   ├── ArticleData.js
+│   ├── MedAssistBackEnd/
+│   │   ├── index.js
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── prisma.config.ts
+│   │   ├── prisma/
+│   │   │   ├── schema.prisma
+│   │   ├── src/
+│   │   │   ├── controllers/
+│   │   │   │   ├── authController.js
+│   │   │   │   ├── diagnosisController.js
+│   │   │   ├── middlewares/
+│   │   │   │   ├── authMiddleware.js
+│   │   │   │   ├── uploadMiddleware.js
+│   │   │   ├── routes/
+│   │   │   │   ├── authRoutes.js
+│   │   │   │   ├── diagnosisRoutes.js
+│   │   │   ├── services/
+│   │   │   │   ├── aiService.js
+│   │   │   │   ├── dbService.js
+│   │   │   │   ├── mailService.js
+│   │   ├── uploads/
