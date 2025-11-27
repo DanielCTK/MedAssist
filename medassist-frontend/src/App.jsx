@@ -28,7 +28,7 @@ import galleryImage2 from './assets/8852467-hd_1080_1920_30fps.gif';
 import galleryImage3 from './assets/5995131-hd_1080_1920_30fps.gif'; 
 
 // Define Backend API URL
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://medassistapi.onrender.com/api';
 
 // ----------------------------------------------------
 // === COMPONENT: APP HEADER ===

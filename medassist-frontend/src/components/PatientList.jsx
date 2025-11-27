@@ -6,7 +6,7 @@ import axios from 'axios';
 import AddPatientModal from './AddPatientModal'; 
 
 // API URL
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://medassistapi.onrender.com/api';
 
 // Hàm random màu cờ trạng thái (giả lập)
 const getStatusFlag = (id) => {

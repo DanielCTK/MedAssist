@@ -37,7 +37,7 @@ const DashboardHome = ({ user, isDarkMode, onUpdateUser }) => {
             try {
                 const token = localStorage.getItem('medassist_token');
                 // Gọi API Dashboard thật
-                const response = await axios.get('http://localhost:5000/api/dashboard', {
+                const response = await axios.get('https://medassistapi.onrender.com/api/dashboard', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 const data = response.data;

@@ -5,7 +5,7 @@ import React, { useState, useRef } from 'react'; // <<< QUAN TRỌNG: Thêm useR
 import axios from 'axios';
 import { Upload, X, ScanEye, Activity, ShieldCheck, AlertCircle, BrainCircuit, Save, ChevronRight } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api/diagnose/upload';
+const API_URL = 'https://medassistapi.onrender.com/api/diagnose/upload';
 
 const CoreDiagnosticTool = ({
     patientId,
@@ -81,7 +81,7 @@ const CoreDiagnosticTool = ({
         setIsSaving(true);
         try {
             const token = localStorage.getItem('medassist_token');
-            await axios.post('http://localhost:5000/api/diagnose/save-history', {
+            await axios.post('https://medassistapi.onrender.com/api/diagnose/save-history', {
                 patientId: patientId, // Hoặc tempScanResult.patientId
                 scanImageUrl: tempScanResult.scanImageUrl, // Lấy từ kết quả API upload
                 diagnosisResult: tempScanResult.diagnosis,

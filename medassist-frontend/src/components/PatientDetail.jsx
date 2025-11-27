@@ -5,7 +5,7 @@ import { ArrowLeft, Edit, Camera, FileText, Activity, Thermometer, Droplets, Mor
 import axios from 'axios';
 import PatientHistoryChart from './PatientHistoryChart';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://medassistapi.onrender.com/api';
 
 const PatientDetail = ({ patientId, onBackToList, onStartScan }) => {
     const [patientData, setPatientData] = useState(null);
